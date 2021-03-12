@@ -11,11 +11,9 @@ for f in file:
 
     print (code)
 
-
     url = "https://www.generac.com/GeneracCorporate/Webservices/DealerLocatorWebService.asmx/SearchDealerLocator"
 
-    payload = "{'searchOptions':{'State':'','City':'','PostalCode':" + str(
-        code) + ",'Category':'1',\"CountryCode\":\"\",\"Radius\":\"200\",\"IsUSASelected\":true,\"IsCANSelected\":false,\"IsINTSelected\":false}}"
+    payload = "{'searchOptions':{'State':'','City':'','PostalCode':" + str(code) + ",'Category':'P',\"CountryCode\":\"\",\"Radius\":\"200\",\"IsUSASelected\":true,\"IsCANSelected\":false,\"IsINTSelected\":false}}"
     headers = {
         'sec-ch-ua': "\"Chromium\";v=\"88\", \"Google Chrome\";v=\"88\", \";Not A Brand\";v=\"99\"",
         'accept': "application/json, text/javascript, */*; q=0.01",
@@ -126,7 +124,8 @@ for f in file:
 
             temp = []
 
-            temp.append('Residential Generators Sales & Service')
+            temp.append(code)
+            temp.append('Portable Generator Retailers')
             temp.append(DealerID)
             temp.append(DealerName)
             temp.append(DealerAddress1)
@@ -145,7 +144,7 @@ for f in file:
 
             print (temp)
 
-            with open('cat1.csv', 'a+') as csvfile:
+            with open('cat6.csv', 'a+') as csvfile:
                 csvwriter = csv.writer(csvfile)
                 csvwriter.writerows(arr)
 
