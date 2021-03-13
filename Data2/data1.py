@@ -13,6 +13,12 @@ for f in file:
 
         print (code)
 
+        f2 = open('done123.txt','a+')
+        f2.write(code)
+        f2.write('\n')
+        f2.close()
+
+
         url = "https://www.generac.com/GeneracCorporate/Webservices/DealerLocatorWebService.asmx/SearchDealerLocator"
 
         payload = "{'searchOptions':{'State':'','City':'','PostalCode':" + str(code) + ",'Category':'3',\"CountryCode\":\"\",\"Radius\":\"200\",\"IsUSASelected\":true,\"IsCANSelected\":false,\"IsINTSelected\":false}}"
