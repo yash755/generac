@@ -126,8 +126,8 @@ for f in file:
 
                 temp = []
 
-                temp.append(code)
-                temp.append('Industrial/Commercial Sales & Service')
+                # temp.append(code)
+                # temp.append('Industrial/Commercial Sales & Service')
                 temp.append(DealerID)
                 temp.append(DealerName)
                 temp.append(DealerAddress1)
